@@ -22,14 +22,12 @@
             vm.createTitle="";
             vm.createGenre="";
             vm.createYear="";
-            bookService.getBooks().then(function (results) {
-            vm.books = results;});
+            location.reload();
         }
 
         vm.delete = function(bookToDelete) {
             bookService.deleteBook(bookToDelete);
-            bookService.getBooks().then(function (results) {
-            vm.books = results;});
+            location.reload();
         }
 
         function init() {

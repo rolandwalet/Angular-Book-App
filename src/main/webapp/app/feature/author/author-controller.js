@@ -17,14 +17,12 @@
             authorService.saveAuthor({"name":vm.createName});
             vm.toggleCreateMode();
             vm.createName = "";
-            authorService.getAuthors().then(function (results) {
-            vm.authors = results;});
+            location.reload();
         }
 
         vm.delete = function(authorToDelete) {
             authorService.deleteAuthor(authorToDelete);
-            authorService.getAuthors().then(function (results) {
-            vm.authors = results;});
+            location.reload();
         }
 
         function init() {
