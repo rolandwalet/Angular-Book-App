@@ -18,9 +18,6 @@ public class Book {
 	@Size(min = 4, max = 4)
 	private String publishYear;
 	
-	@ManyToOne
-	private String Author;
-	
 	public Book() {
 	}
 
