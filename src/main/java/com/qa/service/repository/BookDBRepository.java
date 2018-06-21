@@ -44,6 +44,7 @@ public class BookDBRepository implements BookRepository {
 		if(bookToDelete.equals(null)) {
 			return "{\"message\": \"ERROR: Book not found\"}";
 		} else {
+			bookToDelete.setAuthor(null);
 			em.remove(bookToDelete);
 			return "{\"message\": \"Book successfully deleted\"}";
 		}

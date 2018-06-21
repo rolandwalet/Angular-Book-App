@@ -16,8 +16,8 @@
         }
 
         vm.create = function() {
-            console.log({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":vm.createAuthor});
-            bookService.saveBook({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":vm.createAuthor});
+            console.log({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":{"name":vm.createAuthor.name}});
+            bookService.saveBook({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":{"name":vm.createAuthor.name}});
             vm.toggleCreateMode();
             vm.createTitle="";
             vm.createGenre="";
