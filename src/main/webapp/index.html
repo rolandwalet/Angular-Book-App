@@ -12,7 +12,8 @@
 	        </div>
 	        <ul>
 	            <li><a ui-sref="dashboard">Dashboard</a></li>
-	            <li><a ui-sref="book">Book</a></li>
+	            <li><a ui-sref="book">Books</a></li>
+                <li><a ui-sref="author">Authors</a></li>
 	        </ul>
 	    </div>
 	</nav>
@@ -26,11 +27,13 @@
     <script src="app/app-state-manager.js"></script>
     
     <script src="app/service/dal/dal.js"></script>
+    <script src="app/service/dal/author.js"></script>
     <script src="app/service/dal/book.js"></script>
     
+    <script src="app/service/author.js"></script>
     <script src="app/service/book.js"></script>
     
-    
+    <script src="app/feature/author/author-controller.js"></script>
     <script src="app/feature/book/book-controller.js"></script>
     <script src="app/feature/dashboard/dashboard-controller.js"></script>
     </div>

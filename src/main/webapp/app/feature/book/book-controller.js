@@ -2,7 +2,7 @@
 
 (function() {
 
-    var BookController =  function(bookService, $log) {
+    var BookController =  function(bookService, authorService, $log) {
         
     	var vm = this;
 
@@ -10,13 +10,14 @@
         vm.createTitle = "";
         vm.createGenre = "";
         vm.createYear = "";
+        vm.createAuthor = "";
         vm.toggleCreateMode = function() {
             vm.createMode=!vm.createMode;
         }
 
         vm.create = function() {
-            console.log({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear});
-            bookService.saveBook({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear});
+            console.log({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":vm.createAuthor});
+            bookService.saveBook({"bookTitle":vm.createTitle, "genre":vm.createGenre, "publishYear":vm.createYear, "author":vm.createAuthor});
             vm.toggleCreateMode();
             vm.createTitle="";
             vm.createGenre="";
@@ -40,11 +41,19 @@
                 vm.error = true;
                 vm.errorMessage = error;
             });
+            authorService.getAuthors().then(function (results) {
+            vm.authors = results;
+            $log.log("In the book controller the value of the result promise is ");
+            $log.log(JSON.stringify(vm.authors));
+            }, function (error) {
+                vm.error = true;
+                vm.errorMessage = error;
+            });
        }
        
        init();
 
     };
 
-    angular.module('bookApp').controller('bookController', ['bookService','$log', BookController]);
+    angular.module('bookApp').controller('bookController', ['bookService', 'authorService', '$log', BookController]);
 }());

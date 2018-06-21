@@ -1,0 +1,26 @@
+<div ng-controller="authorController as authorCtrl">
+	<div>
+        Authors page
+    </div>
+	<div>
+   		<div>
+        	<h3><span>Author Table</span></h3>
+        	<table>
+        		<tr>
+        			<th>AUTHOR NAME</th>
+        		</tr>
+                <tr>
+                    <td ng-if="authorCtrl.createMode"><input placeholder="Name" ng-model="authorCtrl.createName" /></td>
+                    <td>
+                        <input type="button" value="Create" ng-if="!authorCtrl.createMode" ng-click="authorCtrl.toggleCreateMode()" />
+                        <input type="button" value="Save" ng-if="authorCtrl.createMode" ng-click="authorCtrl.create();authorCtrl.toggleCreateMode" />
+                    </td>
+                </tr>
+        		<tr ng-repeat="author in authorCtrl.authors">
+        			<td>{{author.name}}</td>
+                    <td><input type="button" value="Delete" ng-click="authorCtrl.delete(author)"/></td>
+        		</tr>
+        	</table>
+        </div>
+	</div>
+</div>

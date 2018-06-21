@@ -44,7 +44,15 @@ public class BookEndpoint {
 		return repo.delete(id);
 	}
 
+	@Path("/createdata")
+	@GET
+	@Produces({ "application/json" })
+	public String createData() {
+		return repo.createData();
+	}
+	
 	public void setRepo(BookDBRepository repo) {
 		this.repo = repo;
 	}
+	
 }

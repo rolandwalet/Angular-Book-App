@@ -11,6 +11,9 @@
         }).state("book", {
                 url: "/book",
                 templateUrl: "app/feature/book/book.html"
+        }).state("author", {
+                url: "/author",
+                templateUrl: "app/feature/author/author.html"
         })
     });
 }());

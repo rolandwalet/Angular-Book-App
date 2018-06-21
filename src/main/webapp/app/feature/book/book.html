@@ -7,14 +7,19 @@
         	<h3><span>Book Table</span></h3>
         	<table>
         		<tr>
-        			<th>{{TITLE}}</th>
-        			<th>{{GENRE}}</th>
-        			<th>{{YEAR}}</th>
+        			<th>TITLE</th>
+        			<th>GENRE</th>
+        			<th>YEAR</th>
+                    <th>AUTHOR</th>
         		</tr>
                 <tr>
                     <td ng-if="bookCtrl.createMode"><input placeholder="Title" ng-model="bookCtrl.createTitle" /></td>
                     <td ng-if="bookCtrl.createMode"><input placeholder="Genre" ng-model="bookCtrl.createGenre" /></td>
                     <td ng-if="bookCtrl.createMode"><input placeholder="year YYYY" ng-model="bookCtrl.createYear" /></td>
+                    <td ng-if="bookCtrl.createMode">
+                        <select ng-model="bookCtrl.createAuthor" ng-options="author.name for author in bookCtrl.authors">
+                            <option value="" label="Select an item"></option>
+                        </select></td>
                     <td>
                         <input type="button" value="Create" ng-if="!bookCtrl.createMode" ng-click="bookCtrl.toggleCreateMode()" />
                         <input type="button" value="Save" ng-if="bookCtrl.createMode" ng-click="bookCtrl.create();bookCtrl.toggleCreateMode" />
@@ -24,6 +29,7 @@
         			<td>{{book.bookTitle}}</td>
         			<td>{{book.genre}}</td>
         			<td>{{book.publishYear}}</td>
+                    <td>{{book.author.name}}</td>
                     <td><input type="button" value="Delete" ng-click="bookCtrl.delete(book)"/></td>
         		</tr>
         	</table>

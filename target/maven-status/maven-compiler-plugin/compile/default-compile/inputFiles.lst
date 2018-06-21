@@ -1,6 +1,10 @@
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\service\repository\BookRepository.java
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\integration\BookEndpoint.java
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\service\repository\BookDBRepository.java
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\integration\JAXActivator.java
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\util\JSONUtil.java
-C:\Users\Admin\Documents\eclipse-workspace\Book-App\src\main\java\com\qa\domain\Book.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\service\repository\AuthorDBRepository.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\service\repository\AuthorRepository.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\integration\AuthorEndpoint.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\service\repository\BookRepository.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\service\repository\BookDBRepository.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\domain\Book.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\integration\BookEndpoint.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\util\JSONUtil.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\domain\Author.java
+C:\Users\Admin\git\Angular-Book-App\src\main\java\com\qa\integration\JAXActivator.java

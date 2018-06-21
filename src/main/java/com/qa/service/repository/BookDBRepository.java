@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
+import com.qa.domain.Author;
 import com.qa.domain.Book;
 import com.qa.util.JSONUtil;
 
@@ -22,8 +23,8 @@ public class BookDBRepository implements BookRepository {
 	private JSONUtil util;
 
 	public String getAll() {
-		TypedQuery<Book> query = em.createQuery("SELECT b FROM Book b ORDER BY b.id", Book.class);
-		return util.getJSONForObject(query.getResultList());
+		TypedQuery<Book> bookQuery = em.createQuery("SELECT b FROM Book b", Book.class);
+		return util.getJSONForObject(bookQuery.getResultList());
 	}
 
 	public String getOne(Long id) {
@@ -46,6 +47,31 @@ public class BookDBRepository implements BookRepository {
 			em.remove(bookToDelete);
 			return "{\"message\": \"Book successfully deleted\"}";
 		}
+	}
+	
+	@Transactional(REQUIRED)
+	public String createData() {
+		
+		Author joeBloggs = new Author("Joe Bloggs");
+		
+		Author joeBlaggs = new Author("Joe Blaggs");
+		
+		Book book1 = new Book("Book1", "Adventure", "2001", joeBloggs);
+		em.persist(book1);
+		
+		Book book2 = new Book("Book2: The Sequel", "Fantasy", "2006", joeBloggs);
+		em.persist(book2);
+		
+		Book book3 = new Book("Book3: The Return of the Book", "Sci-Fi", "2011", joeBlaggs);
+		em.persist(book3);
+		
+		Book book4 = new Book("How to write a Book", "Non-Fiction", "2013", joeBlaggs);
+		em.persist(book4);
+		
+		Book book5 = new Book("Book4: The Last Book", "Fantasy", "2015", joeBloggs);
+		em.persist(book5);
+		
+		return "{\"message\": \"Sample data created\"}";
 	}
 
 	public void setUtil(JSONUtil util) {
